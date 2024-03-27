@@ -1,8 +1,33 @@
 <!DOCTYPE html>
-<head>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+    </head>
+    
+    <body>
+        <h1 class="title">
+            What's the weather like?
+        </h1>
+        
 
-</head>
+        <section>
+            <input >
+            <button type="submit" title="search">Search</button>
+        </section>
 
-<body>
-    <h1>Hola Mundo</h1>
-</body>
+        <article>
+            <img src="http://openweathermap.org/img/w/{{ icon }}.png" alt="Image">
+            <h1>{{ name }}</h1>
+            <h2>{{ main }}</h2>
+            <h2>{{ description }}</h2>
+            <h2>{{ temp }}</h2>
+        </article>
+
+    
+    </body>
+
+</html>
