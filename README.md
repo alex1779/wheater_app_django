@@ -1,4 +1,4 @@
-# wheater_app_django
+# Wheater App With Django
 
 <a name="readme-top"></a>
 
