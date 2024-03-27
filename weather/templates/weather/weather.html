@@ -15,19 +15,48 @@
         
 
         <section>
-            <input >
-            <button type="submit" title="search">Search</button>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="field has-addons">
+                    <div class="control is-expanded">
+                        {{ form.name }}
+                    </div>
+                    <div class="control">
+                        <button type="submit" class="button is-info">
+                            Add City
+                        </button>
+                    </div>
+                </div>
+            </form>
         </section>
 
-        <article>
-            <img src="http://openweathermap.org/img/w/{{ icon }}.png" alt="Image">
-            <h1>{{ name }}</h1>
-            <h2>{{ main }}</h2>
-            <h2>{{ description }}</h2>
-            <h2>{{ temp }}</h2>
-        </article>
 
-    
+        {% for city_weather in weather_data %}
+        <div class="box">
+            <article class="media">
+                <div class="media-left">
+                    <figure class="image is-50x50">
+                        <img src="http://openweathermap.org/img/w/{{ city_weather.icon }}.png" alt="Image">
+                    </figure>
+                </div>
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <span class="title">{{ city_weather.city }}</span>
+                            <br>
+                            <span class="subtitle">{{ city_weather.temperature }}° F</span>
+                            <br> {{ city_weather.description }}
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+        {% endfor %}
+
+
+        
+        <footer class="footer">
+        </footer>
     </body>
 
 </html>
